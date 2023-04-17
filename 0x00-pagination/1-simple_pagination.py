@@ -31,11 +31,10 @@ class Server:
         assert type(page) is int and page > 0
         assert type(page_size) is int and page_size > 0
 
-        index = index_range(page, page_size)
-        begin = index[0]
-        last = index[1]
-
-        try:
-            return self.dataset()[begin:last]
-        except IndexError:
+        self.dataset()
+        if self.__dataset is None:
             return []
+
+        index = index_range(page, page_size)
+        start = self.__dataset[index[0]:index[1]]
+        return start
