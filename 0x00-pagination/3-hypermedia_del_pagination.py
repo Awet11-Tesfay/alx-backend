@@ -40,6 +40,7 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """ methods with two integer arguments """
         high_index = len(self.dataset())
         assert type(index) is int and index < high_index
         difference = 0
