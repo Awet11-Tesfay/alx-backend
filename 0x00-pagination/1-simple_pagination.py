@@ -1,4 +1,4 @@
-#!/usr/bin/env pyhton3
+#!/usr/bin/env python3
 """ copy index_range from the previous task and the ff class into your code """
 
 import csv
