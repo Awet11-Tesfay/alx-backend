@@ -1,5 +1,6 @@
 #!/usr/bin/env pyhton3
 """ copy index_range from the previous task and the ff class into your code """
+
 import csv
 import math
 from typing import List, Tuple
