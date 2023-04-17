@@ -2,7 +2,7 @@
 """ copy index_range from the previous task and the ff class into your code """
 import csv
 import math
-from typing import List
+from typing import List, Tuple
 
 index_range = __import__('0-simple_helper_function').index_range
 
