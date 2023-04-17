@@ -4,7 +4,10 @@ import csv
 import math
 from typing import List, Tuple
 
-index_range = __import__('0-simple_helper_function').index_range
+
+def index_range(page: int, page_size: int) -> Tuple:
+    """ Return a tuple """
+    return ((page * page_size) - page_size, page_size * page)
 
 
 class Server:
