@@ -38,6 +38,6 @@ class Server:
         if self.__dataset is None:
             return []
 
-        index = index_range(page, page_size)
-        start = self.__dataset[index[0]:index[1]]
+        index_range = index_range(page, page_size)
+        start = self.__dataset[index_range[0]:index_range[1]]
         return start
