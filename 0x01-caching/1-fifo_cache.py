@@ -11,7 +11,7 @@ class FIFICache(BaseCaching):
     """
 
     def __init__(slef):
-        """ Initializing class
+        """ Initializing overload but do not forget call parent class
         """
         super().__init__()
 
