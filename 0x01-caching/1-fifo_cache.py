@@ -17,11 +17,11 @@ class FIFICache(BaseCaching):
 
     def put(self, key, item):
         """ Must assign to self.cache_data the item for key
-            if key or item is none not do nothing
-            if the number of items in self.cache_data is higher
-            that BaseCaching.MAX_ITEMS
-            you must discard the first item
-            you must print DISCARD with key
+          - if key or item is none not do nothing
+          - if the number of items in self.cache_data is higher
+          - that BaseCaching.MAX_ITEMS
+          - you must discard the first item
+          - you must print DISCARD with key
         """
         if key is not None and item is not None:
             self.cache_data[key] = item
