@@ -3,7 +3,7 @@
 from base_caching import BaseCaching
 
 
-class BasicCache(BaseCaching):
+class FIFOCache(BaseCaching):
     """ BaseicCache that inherits from BaseCaching """
 
     def __init__(self):
@@ -12,12 +12,12 @@ class BasicCache(BaseCaching):
 
     def put(self, key, item):
         """ Assign to the dictionary """
-        if key and item:
+        if key is not None and item is not None:
             self.cache_data[key] = item
         if len(self.cache_data) > self.MAX_ITEMS:
-            keys_list = list(self.cache_data.keys())
-            del self.cache_data[keys_list[0]]
-            print(f'DISCARD: {keys_list[0]}')
+            element = list(self.cache_data.keys())
+            del self.cache_data[element[0]]
+            print(f'DISCARD: {element[0]}')
 
     def get(self, key):
         """ return  the value in self.cache_data """
