@@ -29,7 +29,7 @@ class LRUCache(BaseCaching):
     def get(self, key):
         """ Return the value
         """
-        if key in self.cache_data.keys():
-            self.stack.append(key)
-            self.stack.remove(key)
-        return self.cache_data.get(key)
+        if key is not None and key in self.cache_data:
+            self.keys.append(self.keys.pop(self.keys.index(key)))
+            return self.cache_data[key]
+        return None
