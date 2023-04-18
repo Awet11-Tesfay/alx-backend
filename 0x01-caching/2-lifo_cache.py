@@ -16,19 +16,18 @@ class LIFOCache(BaseCaching):
     def put(self, key, item):
         """ Muat assign to dictionary
         """
-        if key is not None and item is not None:
-            self.cache_data[key] = item
-            if not key or not item:
-                return
-            new_element = True if key in self.cache_data.keys() else False
+        if not key or not item:
+            return
+        
+        new_element = True if key in self.cache_data.keys() else False
 
-            self.cache_data[key] = item
+        self.cache_data[key] = item
 
-            if new_element:
-                self.updated_key = key
-                return
+        if new_element:
+            self.updated_key = key
+            return
 
-            element = list(self.cache_data.keys())
+        element = list(self.cache_data.keys())
 
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
             try:
