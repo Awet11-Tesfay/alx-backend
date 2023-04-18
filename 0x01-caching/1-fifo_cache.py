@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-""" Fifo caching in python
-"""
+""" Fifo caching in python """
 from base_caching import BaseCaching
 
 
@@ -8,6 +7,7 @@ class BasicCache(BaseCaching):
     """ BaseicCache that inherits from BaseCaching """
 
     def __init__(self):
+        """ Initialize the from the parent class"""
         super().__init__()
 
     def put(self, key, item):
