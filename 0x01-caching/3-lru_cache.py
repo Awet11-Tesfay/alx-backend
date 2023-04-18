@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+""" MRU Caching
+"""
+from base_caching import BaseCaching
+
+
+class LRUCache(BaseCaching):
+    """ Creates a class LRU that inherits form BaseCaching
+    """
+    
+    def __init__(self):
+        """ Initialize from the parent class
+        """
+        super().__init__()
+        self.keys = []
+
+    def put(self, key, item):
+        if key is not None and item is not None:
+            self.cache_data[key] = item
+            if key not in self.keys:
+                self.keys.append(key)
+            else:
+                self.keys.append(self.keys.pop(self.keys.index(key)))
+            if len(self.keys) > BaseCaching.MAX_ITEMS:
+                app = self.keys.pop(0)
+                del self.cache_data[app]
+                print('DISCARD: {:s}'.format(app))
+
+    def get(self, key):
+        """ Return the value
+        """
+        if key in self.cache_data.keys():
+            self.stack.append(key)
+            self.stack.remove(key)
+        return self.cache_data.get(key)
