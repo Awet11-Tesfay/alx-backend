@@ -9,6 +9,8 @@ class LIFOCache(BaseCaching):
     """
 
     def __init__(self):
+        """ Initialize the parent class
+        """
         super.__init__()
 
     def put(self, key, item):
