@@ -12,7 +12,7 @@ class BasicCache(BaseCaching):
 
     def put(self, key, item):
         """ Assign to the dictionary """
-        if key is not None and item is not None:
+        if key and item:
             self.cache_data[key] = item
         if len(self.cache_data) > self.MAX_ITEMS:
             keys_list = list(self.cache_data.keys())
