@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" FIFOCache hat inherits form BaseCaching
+""" FIFOCache that inherits form BaseCaching
 """
 from base_caching import BaseCaching
 
