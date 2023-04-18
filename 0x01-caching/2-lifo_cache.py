@@ -16,10 +16,25 @@ class LIFOCache(BaseCaching):
         """
         if key is not None and item is not None:
             self.cache_data[key] = item
-        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+            if not key or not item:
+                return
+            new_element = True if key in self.cache_data.keys() else False
+
+            self.cache_data[key] = item
+
+            if new_element:
+                self.updated_key = key
+                return
+
             element = list(self.cache_data.keys())
-            del self.cache_data[element[0]]
-            print(f'DISCARD: {element[0]}')
+
+        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+            try:
+                del self.cache_data[self.updated_key]
+                print(f'DISCARD: {self.updated_key}')
+            except Exception:
+                del self.cache_data[element[-2]]
+                print(f'DISCARD: {element[-2]}')
 
     def get(self, key):
         """ Return the value in self.cache_data
