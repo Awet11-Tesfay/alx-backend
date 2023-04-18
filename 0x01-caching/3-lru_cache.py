@@ -7,7 +7,7 @@ from base_caching import BaseCaching
 class LRUCache(BaseCaching):
     """ Creates a class LRU that inherits form BaseCaching
     """
-    
+
     def __init__(self):
         """ Initialize from the parent class
         """
