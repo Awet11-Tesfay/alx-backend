@@ -30,7 +30,7 @@ def index() -> str:
 def get_locale() -> str:
     """ Function with the babel.localeselector decorator
     """
-    return request.accept_language.best_match(app.config['LANGUAGES'])
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 if __name__ == '__main__':
