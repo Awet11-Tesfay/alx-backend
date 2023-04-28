@@ -30,7 +30,7 @@ app.config.from_object(Config)
 def index() -> str:
     """ The returned html file
     """
-    return render_template('4-index.html')
+    return render_template('5-index.html')
 
 
 @babel.localeselector
