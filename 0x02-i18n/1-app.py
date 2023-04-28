@@ -15,6 +15,8 @@ class Config:
 
 app = Flask(__name__)
 app.debug = True
+babel = Babel(app)
+app.config.from_object(Config)
 
 
 @app.route('/')
