@@ -13,7 +13,7 @@ cli.on('error', (error) => {
 
 
 function setNewSchool(schoolName, value) {
-    client.set(schoolName, value, redis.print)
+    cli.set(schoolName, value, redis.print)
 }
 
 const Async = promisify(client.get).bind(client);
